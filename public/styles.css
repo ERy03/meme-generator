@@ -33,10 +33,46 @@ body {
   font-weight: 500;
 }
 
+/* main form */
+
+main {
+  padding: 36px
+}
+
+.form {
+  display: grid;
+  grid-template: 30px 30px 35px / 1fr;
+  gap: 17px;
+}
+
+.form__input {
+  font-family: "Karla", sans-serif;
+  text-indent: 5px;
+  border-radius: 5px;
+  border: 1px solid #D5D4D8;
+}
+
+.form__button {
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Karla", sans-serif;
+  cursor: pointer;
+}
+
+
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .header {
     height: 75px;
+  }
+  .form {
+    grid-template: 35px 35px 40px / 1fr 1fr;
+  }
+  .form__button {
+    grid-column: 1 / -1;
   }
 }
 
@@ -45,11 +81,25 @@ body {
   .header {
     height: 95px;
   }
+  .form {
+    grid-template: 50px 50px / 1fr 1fr;
+    gap: 25px;
+  }
+  .form__button {
+    grid-column: 1 / -1;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .header {
     height: 120px;
+  }
+  .form {
+    grid-template: 60px 60px / 1fr 1fr;
+    gap: 30px;
+  }
+  .form__button {
+    grid-column: 1 / -1;
   }
 }
