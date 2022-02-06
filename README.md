@@ -68,16 +68,6 @@ definition | `properties passed into a component in order to configurate, simila
 `props` | `props` | `state` |
 `props` | `props` | `state` |
 
-<!-- create a table -->
-<table>
-  <tr>
-    <th>Props</th>
-    <th>State</th>
-  </tr>
-  <tr>
-    <td>properties passed into a component in order to configurate, similar to how a function receives parameters. A component receiving props is not allowed to modify those props = immutable</td>
-    <td>state</td>
-  </tr>
 
 # Getting Started with Create React App
 
