@@ -58,6 +58,15 @@ function App() {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
+### React State
+
+Many confuse props and state in React.
+
+table:  | Props | State |
+--------|-------|-------|
+`dfinition` | `props` | `state` |
+`props` | `props` | `state` |
+`props` | `props` | `state` |
 
 
 # Getting Started with Create React App
