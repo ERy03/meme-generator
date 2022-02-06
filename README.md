@@ -62,9 +62,9 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 Many confuse props and state in React.
 
-table:  | Props | State |
+| Props | State |
 --------|-------|-------|
-`dfinition` | `props` | `state` |
+definition | `properties passed into a component in order to configurate, similar to how a function receives parameters. A component receiving props is not allowed to modify those props = immutable` | `` |
 `props` | `props` | `state` |
 `props` | `props` | `state` |
 
