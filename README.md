@@ -1,3 +1,35 @@
+# Notes
+
+What's one problem we face in React?
+
+Take the following example:
+
+``` javascript
+function App() {
+    const thingsArray = ["Thing 1", "Thing 2"]
+    const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)
+
+    function addItem() {
+        const newThingText = `Thing ${thingsArray.length + 1}`
+        thingsArray.push(newThingText)
+        console.log(thingsArray)
+    }
+
+    return (
+        <div>
+            <button onClick={addItem}>Add Item</button>
+            {thingsElements}
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+Everytime a user clicks on the 'Add Item' button, it should trigger the `addItem` function which will add a `newThingText` (Thing 3) into the `thingArray`. `console.log(thingsArray)` is showing `["Thing 1","Thing 2","Thing 3"]` Great! However, 'Thing 3' is not displayed on the screen 😱 Why???
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
