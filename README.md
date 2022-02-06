@@ -26,7 +26,37 @@ function App() {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-Everytime a user clicks on the 'Add Item' button, it should trigger the `addItem` function which will add a `newThingText` (Thing 3) into the `thingArray`. `console.log(thingsArray)` is showing `["Thing 1","Thing 2","Thing 3"]` Great! However, 'Thing 3' is not displayed on the screen 😱 Why???
+Everytime a user clicks on the 'Add Item' button, it should trigger the `addItem` function which will add a `newThingText` (Thing 3) into the `thingsArray`. `console.log(thingsArray)` is showing `["Thing 1","Thing 2","Thing 3"]` Great! However, 'Thing 3' is not displayed on the screen 😱 Why???
+
+-> React doesn't know it should rerender our updated `thingsArray` containing the new "Thing 3". In other words `{thingsElements}` will always be `thingsElements` mapping the two things (Thing 1" and "Thing 2") from the declared `thingsArray`.
+
+Well you might be thinking 🤔 what if we move line 3 `const thingsElements = thingsArray.map(thing => <p key={thing}>{thing}</p>)` below our `function addItem()`. However, this will not work because React only runs this code one time when the App component is being rendered.
+
+Okay... you might also be thinking 🤔 what if we write vanilla JS inside our `addItem()` function? Getting the document element and pushing a new paragraph element into the list. Yea... but luckily React is a declarative framework! And we have React State for that!
+
+Example above using React State:
+
+``` javascript
+function App() {
+    const [things, setThings] = React.useState(["Thing 1", "Thing 2"])
+
+    function addItem() {
+        const newThingText = `Thing ${things.length + 1}`
+        setThings(prevState => [...prevState, newThingText])
+    }
+
+    const thingsElements = things.map(thing => <p key={thing}>{thing}</p>)
+
+    return (
+        <div>
+            <button onClick={addItem}>Add Item</button>
+            {thingsElements}
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
 
 
 
