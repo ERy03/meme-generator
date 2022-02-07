@@ -60,6 +60,9 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ### React State
 
+What is state?
+`A way for React to remember saved values from within a component.`
+
 Many confuse props and state in React.
 
 Table: | Props | State |
