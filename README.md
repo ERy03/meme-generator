@@ -64,9 +64,35 @@ Many confuse props and state in React.
 
 Table: | Props | State |
 --------|-------|-------|
-definition | `properties passed into a component in order to configurate, similar to how a function receives parameters. A component receiving props is not allowed to modify those props = immutable` | `` |
-`props` | `props` | `state` |
-`props` | `props` | `state` |
+definition | `properties passed into a component in order to configurate, similar to how a function receives parameters. A component receiving props is not allowed to modify those props => immutable` | `values that are managed by the component, similar to variable declared inside a function. Any time you have changing values that should be saved/displayed, you'll likely be using state.` |
+
+Take the following example using plain vanilla JS.
+
+``` javascript
+function greeting(name) {
+    const date = new Date()
+    const hours = date.getHours()
+
+    let timeOfDay
+    if(hours >= 4 && hours < 12) {
+        timeOfDay = "morning"
+    } else if(hours >= 12 && hours < 17) {
+        timeOfDay = "afternoon"
+    } else if(hours >= 17 && hours < 20) {
+        timeOfDay = "evening"
+    } else {
+        timeOfDay = "night"
+    }
+
+    return `Good ${timeOfDay}, ${name}!`
+}
+
+console.log(greeting("Bob"))
+```
+
+Here we have a function `greeting(name)`. It takes a name as a parameter and returns a message based on the time of day. `name` is something we don't want to change inside our function. It's the argument that the user passes into our function. However, `date` ,`hours` and `timeOfDay` are variables that we can change inside our function. Usually these variables that are created inside our function or components are handled with state.
+
+
 
 
 # Getting Started with Create React App
