@@ -119,7 +119,12 @@ const result = React.useState("Hello")
 console.log(result) // [Hello, setState] returns an array with the current state and a function to update the state
 ```
 
+How to get the values from `useState`?
+We can use array destructuring to get the values from `useState`.
+
 ```javascript
+const [value, func] = useState("Hello")
+console.log(value) // Hello
 ```
 
 
