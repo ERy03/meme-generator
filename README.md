@@ -95,7 +95,32 @@ console.log(greeting("Bob"))
 
 Here we have a function `greeting(name)`. It takes a name as a parameter and returns a message based on the time of day. `name` is something we don't want to change inside our function. It's the argument that the user passes into our function. However, `date` ,`hours` and `timeOfDay` are variables that we can change inside our function. Usually these variables that are created inside our function or components are handled with state.
 
+### useState
 
+What is `useState`?
+`useState` is a React Hook that lets you declare a state variable.
+
+what is a React Hook?
+A function that lets you “hook into” React state and lifecycle features from function components.
+
+2 ways to write `useState`
+
+```javascript
+// ①
+import React, { useState } from 'react'
+
+const result = useState("Hello")
+
+// - - - - - - - - - - - - - - - - - - - -
+
+// ②　More common
+const result = React.useState("Hello")
+
+console.log(result) // [Hello, setState] returns an array with the current state and a function to update the state
+```
+
+```javascript
+```
 
 
 # Getting Started with Create React App
