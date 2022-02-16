@@ -174,7 +174,7 @@ export default function App() {
   // which you can then use to determine your new value of state.
 ```
 
-`
+"""
 1. You have 2 options for what you can pass in to a
    state setter function (e.g. `setCount`). What are they?
 
@@ -192,7 +192,7 @@ what the new value of state should be.
 3. When would you want to pass the second option (from answer
    above) to the state setter function?
 Whenever you DO need the previous value to determine the new value
-`
+"""
 
 # Getting Started with Create React App
 
