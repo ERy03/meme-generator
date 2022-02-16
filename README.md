@@ -113,7 +113,9 @@ const result = useState("Hello")
 
 // - - - - - - - - - - - - - - - - - - - -
 
-// ②　More common
+// ②　
+import React from 'react'
+
 const result = React.useState("Hello")
 
 console.log(result) // [Hello, setState] returns an array with the current state and a function to update the state
@@ -123,10 +125,74 @@ How to get the values from `useState`?
 We can use array destructuring to get the values from `useState`.
 
 ```javascript
-const [value, func] = useState("Hello")
+const [value, setValue] = useState("Hello")
 console.log(value) // Hello
 ```
 
+How can we change the value of `useState`?
+We can use the second value from `useState` to update the state.
+
+```javascript
+// Without React how can we change the value of a variable?
+let value = "Yes"
+value = "No"
+
+// However we cannot do this with React
+const [value, setValue] = useState("Yes")
+value = "No"
+
+// Instead
+const [value, setValue] = useState("Yes")
+setValue("No")
+```
+
+### Using setState
+
+When using the old state we should create a callback function to update the state.
+React will pass the oldValue as a parameter to the callback function.
+
+e.g.
+
+```javascript
+export default function App() {
+    const [count, setCount] = React.useState(0)
+
+    // Don't do this
+    function subtract() {
+      setCount(count - 1)
+    }
+
+    // Do this
+    function add() {
+      setCount(prevCount => prevCount + 1)
+    }
+  }
+
+  // If you ever need the old value of state to help you determine the new value of state,
+  // you should pass a callback function to your state setter function instead of using
+  // state directly. This callback function will receive the old value of state as its parameter,
+  // which you can then use to determine your new value of state.
+```
+
+`
+1. You have 2 options for what you can pass in to a
+   state setter function (e.g. `setCount`). What are they?
+
+a. New value of state (setCount(42))
+b. Callback function - whatever the callback function
+   returns === new value of state
+
+
+2. When would you want to pass the first option (from answer
+   above) to the state setter function?
+Whenever you don't need the previous value of state to determine
+what the new value of state should be.
+
+
+3. When would you want to pass the second option (from answer
+   above) to the state setter function?
+Whenever you DO need the previous value to determine the new value
+`
 
 # Getting Started with Create React App
 
