@@ -61,6 +61,9 @@ main {
   cursor: pointer;
 }
 
+.meme__image {
+  max-width: 100%;
+}
 
 
 /* Medium devices (landscape tablets, 768px and up) */
